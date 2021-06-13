@@ -1,0 +1,37 @@
+<nav id="mainNav">
+	<div class="inner">
+		<a class="menu" id="menu"><span>MENU</span></a>
+		<div class="panel">
+			<ul>
+				<li class="{% if current_menu_item == 'top' %}current-menu-item{% endif %}">
+					<a href="{% url 'top' %}"><strong>トップページ</strong><span>Top</span></a>
+				</li>
+				<li class="{% if current_menu_item == 'greeting' %}current-menu-item{% endif %}">
+					<a href=""><strong>ごあいさつ</strong><span>Greeting</span></a>
+				</li>
+				<li class="{% if current_menu_item == 'menu' %}current-menu-item{% endif %}">
+					<a href=""><strong>メニュー</strong><span>Menu</span></a>
+					<ul class="sub-menu">
+						<li><a href="">セットメニュー</a></li>
+						<li><a href="">カット</a></li>
+						<li><a href="">パーマ</a></li>
+						<li><a href="">カラー</a></li>
+						<li><a href="">縮毛矯正</a></li>
+						<li><a href="">トリートメント</a></li>
+						<li><a href="">その他</a></li>
+					</ul>
+				</li>
+
+				<li class="{% if current_menu_item == 'stylist' %}current-menu-item{% endif %}">
+					<a href=""><strong>スタイリスト</strong><span>Stylist</span></a>
+				</li>
+				<li class="{% if current_menu_item == 'news' %}current-menu-item{% endif %}">
+					<a href=""><strong>お知らせ</strong><span>News</span></a>
+				</li>
+				<li class="{% if current_menu_item == 'map' %}current-menu-item{% endif %}">
+					<a href=""><strong>地図</strong><span>Map</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

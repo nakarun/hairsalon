@@ -1,0 +1,200 @@
+body{
+    color:#555;
+    font-size:13px;
+    font-family:verdana,"ヒラギノ丸ゴ ProN W4","Hiragino Maru Gothic ProN","メイリオ","Meiryo","ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+    line-height:1.5;
+    -webkit-text-size-adjust:100%;
+}
+
+ul{
+    list-style:none;
+}
+
+/* リンク設定
+------------------------------------------------------------*/
+a{color:#6caefe;text-decoration:none;}
+a:hover{color:#488fdd;}
+a:active, a:focus {outline:0;}
+
+/*************
+/* ヘッダー
+*************/
+#header{
+    height:130px;
+}
+
+/*************
+/* ロゴ
+*************/
+.logo{
+    float:left;
+}
+
+.logo a{
+    color:#555;
+}
+
+.logo span{
+    display:block;
+}
+
+/*************
+/* 電話番号
+*************/
+.info{
+    float:right;
+    padding-right:20px;
+    text-align:right;
+}
+
+.info .open{
+    font-size:11px;
+}
+
+/*************
+/* ロゴ+電話番号
+*************/
+.logo,.info .tel{
+    margin-top:6px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span,.info span{
+    font-size:.6em;
+    font-weight:normal;
+}
+
+
+/* PC用
+------------------------------------------------------------*/
+/*************
+/* 中央寄せ
+*************/
+#header, #wrapper, .inner {
+	width:960px;
+	padding:0;
+	margin:0 auto;
+}
+
+#wrapper{
+    clear:both;
+    padding:20px 0;
+}
+
+nav div.panel{
+	// display:block !important;
+	// float:left;
+}
+
+a#menu{display:none;}
+
+#mainNav{
+	// clear:both;
+	// z-index:200;
+	// position:relative;
+}
+
+#mainNav ul{
+    margin:0;padding:0;
+}
+
+#mainNav li{
+	float:left;
+	// position:relative;
+}
+
+#mainNav li a{
+	color:#555;
+	display: block;
+	text-align: center;
+	_float:left;
+	font-size:13px;
+	width:160px;
+	height:30px;
+	padding:15px 0;
+	border-top:2px solid #ebebeb;
+	border-bottom:2px solid #ebebeb;
+}
+
+#mainNav li a span, #mainNav li a strong{
+    display:block;
+}
+
+#mainNav li a span{
+	color:#bababa;
+	font-size:10px;
+}
+
+// #mainNav ul ul{width:160px;background:#fff;}
+
+#mainNav li ul{
+    display:none;
+}
+
+#mainNav li.current-menu-item a{
+	border-color:#555;
+}
+
+#mainNav li.current-menu-item a,#mainNav li a:hover,#mainNav li.current-menu-item li a:hover{
+	color:#999;
+}
+
+/**************************
+/* メイン画像（トップページ+サブページ）
+**************************/
+#mainBanner{
+    clear:both;
+    margin:25px auto 40px;
+    padding:0;
+    position:relative;
+    text-align:center;
+}
+
+#mainBanner img{
+    max-width:100%;
+    height:auto;
+}
+
+/*************
+/* フッター
+*************/
+#footer .inner{
+    // padding:40px 0;
+    // overflow:hidden;
+}
+
+#footer #info{
+    float:left;
+}
+
+#footer #info .info{
+    float:none;
+}
+
+#footer #info .info{
+    clear:both;
+    padding:5px 0 0;
+    text-align:left;
+}
+
+#footer .logo{
+    font-size:18px;
+}
+
+#footer .info .tel,#footer .info .tel span,#footer #info .open{
+    font-size:12px;
+}
+
+ul.footnav{
+    float:right;
+    width:620px;
+    padding:10px 0;
+}
+
+ul.footnav li{
+    float:left;
+    margin:10px 0 10px 0;
+    padding:0 7px 0 8px;
+    border-right:1px solid #ebebeb;
+}
