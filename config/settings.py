@@ -131,7 +131,7 @@ STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
 MEDIA_URL = '/pics/'
 MEDIA_ROOT = '/var/www/{}/pics'.format(PROJECT_NAME)
 # At local test
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'pics')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

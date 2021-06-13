@@ -8,6 +8,8 @@ body{
 
 ul{
     list-style:none;
+    margin:0;
+    padding:0;
 }
 
 /* リンク設定
@@ -93,10 +95,6 @@ a#menu{display:none;}
 	// clear:both;
 	// z-index:200;
 	// position:relative;
-}
-
-#mainNav ul{
-    margin:0;padding:0;
 }
 
 #mainNav li{
@@ -197,4 +195,26 @@ ul.footnav li{
     margin:10px 0 10px 0;
     padding:0 7px 0 8px;
     border-right:1px solid #ebebeb;
+}
+
+/*************
+/* お知らせ一覧
+*************/
+.topInfo_box span.info {
+    width: 90px;
+    background: #ffc000;
+    text-align: center;
+    line-height: 24px;
+    margin-left: 20px;
+    padding-right: 0;
+}
+
+.topInfo_box span.title {
+    line-height: 24px;
+    margin-left: 20px;
+    padding-right: 0;
+}
+
+.topInfo_box span {
+  display: inline-block;
 }

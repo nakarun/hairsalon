@@ -1,0 +1,15 @@
+{% extends "hairsalon/base.html" %}
+{% load static %}
+{% block page_title %}{{ news_detail.id }}{% endblock %}
+{% block content %}
+<div id="wrapper">
+    {{ news_detail.published | date:"Y-m-d" }}
+    <h2>{{ news_detail.title }}</h2>
+    {% if news_detail.image %}
+    <img src="{{ news_detail.image.url }}" />
+    {% endif %}
+    <div>
+    {{ news_detail.body }}
+    </div>
+</div>
+{% endblock %}
