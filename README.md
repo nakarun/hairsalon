@@ -4,6 +4,6 @@
 - 以下サイトのCSSを参考にしました。
 https://f-tpl.com/tpl_087/
 
-# お知らせ一覧機能
-- 以下のUdemyのレッスンを参考にしました。
-https://www.udemy.com/share/101X2QA0ISeVdXQno=/
+# 参考一覧
+- https://www.udemy.com/share/101X2QA0ISeVdXQno=/
+- https://www.amazon.co.jp/dp/4802094744
