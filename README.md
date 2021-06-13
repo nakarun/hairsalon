@@ -1,4 +1,5 @@
 # 美容室用のHPをDjangoで作成してみました。
+![サンプル画像](sample.png)
 
 # 参考一覧
 - デザイン：https://f-tpl.com/tpl_087/
