@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  gunicorn:
+    image: hairsalon:latest
+    container_name: hairsalon
+    volumes:
+      - .:/usr/src/app/
+      - hairsalon:/var/run/hairsalon
+  nginx:
+    image: nginx:1.17.7
+    container_name: nginx
+    depends_on:
+      - gunicorn
+    ports:
+      - "80:80"
+    volumes:
+      - ./hairsalon.conf:/etc/nginx/conf.d/default.conf
+      - hairsalon:/var/run/hairsalon
+volumes:
+  hairsalon:
+    driver: local
