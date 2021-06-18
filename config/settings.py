@@ -25,7 +25,7 @@ PROJECT_NAME = os.path.basename(BASE_DIR)
 SECRET_KEY = 'django-insecure-_ia)zzpa93eql@5)(i1=7%kban=wwf%5d)+^$3&@ljri+g)16e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['hairsalon']
 
@@ -124,14 +124,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
+STATIC_ROOT = '/var/run/{}/static'.format(PROJECT_NAME)
 # At local test
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Media files updated by users
 
 MEDIA_URL = '/pics/'
-MEDIA_ROOT = '/var/www/{}/pics'.format(PROJECT_NAME)
+MEDIA_ROOT = '/var/run/{}/pics'.format(PROJECT_NAME)
 # At local test
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

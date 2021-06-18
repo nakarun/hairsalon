@@ -5,7 +5,7 @@ services:
     image: hairsalon:latest
     container_name: hairsalon
     volumes:
-      - .:/usr/src/app/
+      - .:/usr/src/hairsalon/
       - hairsalon:/var/run/hairsalon
   nginx:
     image: nginx:1.17.7
