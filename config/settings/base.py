@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 PROJECT_NAME = os.path.basename(BASE_DIR)
 
@@ -22,13 +25,7 @@ PROJECT_NAME = os.path.basename(BASE_DIR)
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_ia)zzpa93eql@5)(i1=7%kban=wwf%5d)+^$3&@ljri+g)16e'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['hairsalon']
-
+SECRET_KEY = env('SECRET_KEY')
 
 # Application definition
 
@@ -124,16 +121,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = '/var/run/{}/static'.format(PROJECT_NAME)
-# At local test
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Media files updated by users
 
 MEDIA_URL = '/pics/'
-MEDIA_ROOT = '/var/run/{}/pics'.format(PROJECT_NAME)
-# At local test
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
