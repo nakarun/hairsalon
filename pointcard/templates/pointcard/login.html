@@ -11,7 +11,7 @@
                 {{ field.errors }}
                 <hr>
             {% endfor %}
-            <button type="submit" class="btn btn-info btn-lg btn-block" >ログイン</button>
+            <button type="submit" class="btn btn-success btn-lg btn-block" >ログイン</button>
             <input type="hidden" name="next" value="{% url 'top' %}" />
             {% csrf_token %}
         </div>

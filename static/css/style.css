@@ -57,7 +57,7 @@ a:active, a:focus {outline:0;}
 /* ロゴ+電話番号
 *************/
 .logo,.info .tel{
-    margin-top:6px;
+    margin:10px 0 10px 0;
     font-size:20px;
     font-weight:bold;
 }
@@ -70,7 +70,16 @@ a:active, a:focus {outline:0;}
 /*************
 /* ログインボタン
 *************/
+.account-menu-navi {
+    padding:10px 20px 0 0;
+    text-align:right;
+}
 
+.welcome-message {
+    font-size:15px;
+    vertical-align: middle;
+    padding-right:10px;
+}
 
 /* PC用
 ------------------------------------------------------------*/
