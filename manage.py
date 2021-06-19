@@ -5,6 +5,7 @@ import sys
 import environ
 
 env = environ.Env()
+env.read_env('.env')
 
 
 def main():
