@@ -22,7 +22,7 @@ a:active, a:focus {outline:0;}
 /* ヘッダー
 *************/
 #header{
-    height:130px;
+    height:160px;
 }
 
 /*************
@@ -38,6 +38,7 @@ a:active, a:focus {outline:0;}
 
 .logo span{
     display:block;
+    margin-top:6px;
 }
 
 /*************
@@ -58,7 +59,7 @@ a:active, a:focus {outline:0;}
 *************/
 .logo,.info .tel{
     margin:10px 0 6px 0;
-    font-size:20px;
+    font-size:26px;
     font-weight:bold;
 }
 
