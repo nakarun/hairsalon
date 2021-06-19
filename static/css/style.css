@@ -67,6 +67,10 @@ a:active, a:focus {outline:0;}
     font-weight:normal;
 }
 
+/*************
+/* ログインボタン
+*************/
+
 
 /* PC用
 ------------------------------------------------------------*/
@@ -109,7 +113,6 @@ a#menu{display:none;}
 	_float:left;
 	font-size:13px;
 	width:160px;
-	height:30px;
 	padding:15px 0;
 	border-top:2px solid #ebebeb;
 	border-bottom:2px solid #ebebeb;

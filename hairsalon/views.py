@@ -3,6 +3,7 @@ from django.views import View
 
 from .models import News
 
+
 # Create your views here.
 
 class TopView(View):
@@ -14,7 +15,6 @@ class TopView(View):
         }
         return render(request, 'hairsalon/top.html', context)
 
-top = TopView.as_view()
 
 class NewsDetailView(View):
     def get(self, request, news_id, *args, **kwargs):
@@ -24,5 +24,3 @@ class NewsDetailView(View):
             'current_menu_item': 'news',
         }
         return render(request, 'hairsalon/news_detail.html', context)
-
-news_detail = NewsDetailView.as_view()
