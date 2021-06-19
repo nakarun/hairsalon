@@ -57,7 +57,7 @@ a:active, a:focus {outline:0;}
 /* ロゴ+電話番号
 *************/
 .logo,.info .tel{
-    margin-top:6px;
+    margin:10px 0 6px 0;
     font-size:20px;
     font-weight:bold;
 }
@@ -67,6 +67,19 @@ a:active, a:focus {outline:0;}
     font-weight:normal;
 }
 
+/*************
+/* ログインボタン
+*************/
+.account-menu-navi {
+    padding:10px 20px 0 0;
+    text-align:right;
+}
+
+.welcome-message {
+    font-size:15px;
+    vertical-align: middle;
+    padding-right:10px;
+}
 
 /* PC用
 ------------------------------------------------------------*/
@@ -109,7 +122,6 @@ a#menu{display:none;}
 	_float:left;
 	font-size:13px;
 	width:160px;
-	height:30px;
 	padding:15px 0;
 	border-top:2px solid #ebebeb;
 	border-bottom:2px solid #ebebeb;
@@ -217,4 +229,11 @@ ul.footnav li{
 
 .topInfo_box span {
   display: inline-block;
+}
+
+
+tr.stamp_frame {
+   line-height: 50px;
+   min-height: 50px;
+   height: 50px;
 }
