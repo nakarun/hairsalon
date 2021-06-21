@@ -168,8 +168,33 @@ a#menu{display:none;}
 }
 
 /*************
+メイン コンテンツ
+*************/
+#main{
+	float:right;
+	width:680px;
+	padding:15px 0 30px 0;
+}
+
+/*************
+/* サイドバー
+*************/
+#sidebar{
+	float:left;
+	width:250px;
+	padding:15px 0;
+	overflow:hidden;
+}
+
+/*************
 /* フッター
 *************/
+
+/* floatをかけた要素に続く要素の回り込みを解消する */
+#footer{
+    clear:both;
+}
+
 #footer .inner{
     // padding:40px 0;
     // overflow:hidden;

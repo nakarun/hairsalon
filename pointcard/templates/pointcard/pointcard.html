@@ -3,27 +3,37 @@
 {% block page_title %}LOGIN PAGE{% endblock %}
 {% block content %}
 <div id="wrapper">
-    <div class="col-md-6 offset-md-3">
-        <div class="card">
-            <div class="card-body">
-                Name: {{ user }}様
-                <hr>
-                <table class="table table-bordered">
-                    <tr class="stamp_frame">
-                    {% for frame in stamp_frames %}
-                        <td></td>
-                    {% endfor %}
-                    </tr>
-                    <tr class="stamp_frame">
-                    {% for frame in stamp_frames %}
-                        <td></td>
-                    {% endfor %}
-                    </tr>
-                </table>
-                <hr>
-                <p>ご来店１回につき、１枠捺印致します。（お会計金額2,000円以上）</p>
+    <section id="main">
+        <div class="col-md-9 offset-md-1">
+            <div class="card">
+                <div class="card-body">
+                    Name: {{ user }}様
+                    <hr>
+                    <table class="table table-bordered">
+                        <tr class="stamp_frame">
+                        {% for frame in stamp_frames %}
+                            <td></td>
+                        {% endfor %}
+                        </tr>
+                        <tr class="stamp_frame">
+                        {% for frame in stamp_frames %}
+                            <td></td>
+                        {% endfor %}
+                        </tr>
+                    </table>
+                    <hr>
+                    <p>ご来店１回につき、１枠捺印致します。（お会計金額2,000円以上）</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <aside id="sidebar">
+        <section>
+            <h3>メニュー</h3>
+            <ul>
+                <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+            </ul>
+        </section>
+    </aside>
 </div>
 {% endblock %}
