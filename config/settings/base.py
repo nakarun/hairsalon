@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hairsalon.apps.HairsalonConfig',
     'pointcard.apps.PointcardConfig',
+    'accounts.apps.AccountsConfig',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +61,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'accounts', 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,10 +122,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+################
+# Authenticate #
+################
 
 AUTH_USER_MODEL = 'hairsalon.BaseUser'
 
-LOGIN_URL = '/customer/login/'
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = 'pointcard'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+# リンクでログアウトする挙動にする
+ACCOUNT_LOGOUT_ON_GET = True
+
+# ユーザー登録時に登録確認メールを送信しない
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 # Static files (CSS, JavaScript, Images)

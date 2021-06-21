@@ -17,7 +17,7 @@ class CustomerSignUp(CreateView):
     object: object
     form_class = SignUpForm
     template_name = "pointcard/signup.html"
-    success_url = reverse_lazy('customer_pointcard')
+    success_url = reverse_lazy('pointcard')
 
     def form_valid(self, form):
         """ログインも一緒にしてしまうためにオーバーライド"""
