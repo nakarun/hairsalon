@@ -2,37 +2,48 @@
 {% load static %}
 {% block page_title %}LOGIN PAGE{% endblock %}
 {% block content %}
-    {% block body %}
-    <div id="wrapper">
-      <div class="col-md-6 offset-md-3">
-        {% if messages %}
-        <div>
-          <strong>Messages:</strong>
-          <ul>
-            {% for message in messages %}
-            <li>{{message}}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
+{% block body %}
+<div id="wrapper">
+    <section id="main">
+        <div class="col-md-10 offset-md-0">
+            {% if messages %}
+            <div>
+                <strong>Messages:</strong>
+                <ul>
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <hr>
+            {% endif %}
 
-<!--    <div>-->
-<!--      <strong>Menu:</strong>-->
-<!--      <ul>-->
-<!--        {% if user.is_authenticated %}-->
-<!--        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>-->
-<!--        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>-->
-<!--        {% else %}-->
-<!--        <li><a href="{% url 'account_login' %}">Sign In</a></li>-->
-<!--        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>-->
-<!--        {% endif %}-->
-<!--      </ul>-->
-<!--    </div>-->
         {% block account_content %}
         {% endblock %}
-      </div>
+
+        </div>
+    </section>
+    <aside id="sidebar">
+        <section>
+            <h3>メニュー</h3>
+            <ul>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'pointcard' %}">ポイントカード</a></li>
+                <li><a href="{% url 'account_email' %}">メールアドレス変更</a></li>
+                <li><a href="{% url 'account_change_password' %}">パスワード変更</a></li>
+                <li><a href="{% url 'account_reset_password' %}">パスワードをお忘れの方</a></li>
+                <li><a href="{% url 'account_logout' %}">ログアウト</a></li>
+                {% else %}
+                <li><a href="{% url 'account_login' %}">ログイン</a></li>
+                <li><a href="{% url 'account_signup' %}">新規アカウント作成</a></li>
+                {% endif %}
+            </ul>
+        </section>
+    </aside>
     </div>
     {% endblock %}
+
     {% block extra_body %}
     {% endblock %}
+
 {% endblock %}
