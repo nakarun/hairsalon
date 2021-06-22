@@ -1,7 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 from phonenumber_field.modelfields import PhoneNumberField
 
+from accounts.models import BaseUser
 import uuid
 
 
@@ -20,15 +20,6 @@ class Salon(models.Model):
 
     class Meta:
         verbose_name = "美容室"
-
-
-class BaseUser(AbstractUser):
-    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = "ベースユーザ"
 
 
 class SalonStaff(BaseUser):

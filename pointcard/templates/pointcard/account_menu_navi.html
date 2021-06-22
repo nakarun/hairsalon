@@ -1,18 +1,18 @@
 <div class="account-menu-navi">
     {% if user.is_authenticated %}
     <span class="welcome-message">ようこそ、{{ user }}様！</span>
-    <a href="{% url 'customer_pointcard' %}">
+    <a href="{% url 'pointcard' %}">
         <button type="button" class="btn btn-success btn-sm">マイページ</button>
     </a>
-    <a href="{% url 'customer_logout' %}">
-        <button typee="button" class="btn btn-warning btn-sm">ログアウト</button>
+    <a href="{% url 'account_logout' %}">
+        <button type="button" class="btn btn-warning btn-sm">ログアウト</button>
     </a>
     {% else %}
     <span class="welcome-message">ようこそ、ゲスト様！</span>
-    <a href="{% url 'customer_login' %}">
+    <a href="{% url 'account_login' %}">
         <button type="button" class="btn btn-success btn-sm">ログイン</button>
     </a>
-    <a href="{% url 'customer_signup' %}">
+    <a href="{% url 'account_signup' %}">
         <button type="button" class="btn btn-info btn-sm">新規アカウント作成</button>
     </a>
     {% endif %}
