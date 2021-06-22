@@ -186,6 +186,32 @@ a#menu{display:none;}
 	overflow:hidden;
 }
 
+#sidebar ul{padding:15px 0;}
+
+#sidebar li{
+    margin-bottom:10px;
+    padding-bottom:10px;
+    list-style:none;
+    border-bottom:1px dashed #ebebeb;
+}
+
+#sidebar li:last-child{
+    border:0;
+    margin-bottom:0px;
+}
+
+#sidebar li a{
+    color:#555;
+    font-size:12px;
+    display:block;
+}
+
+#sidebar li a:hover{
+    color:#999;
+    font-size:12px;
+    display:block;
+}
+
 /*************
 /* フッター
 *************/
@@ -238,6 +264,7 @@ ul.footnav li{
 /*************
 /* お知らせ一覧
 *************/
+
 .topInfo_box span.info {
     width: 90px;
     background: #ffc000;
@@ -262,4 +289,13 @@ tr.stamp_frame {
    line-height: 50px;
    min-height: 50px;
    height: 50px;
+}
+
+/*************
+/* 並んだボタン
+*************/
+
+.button-lined {
+    display: block;
+    float: right;
 }
