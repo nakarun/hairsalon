@@ -139,6 +139,8 @@ ACCOUNT_LOGOUT_ON_GET = True
 # ユーザー登録時に登録確認メールを送信しない
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# 登録できるメールアドレスの数
+ACCOUNT_MAX_EMAIL_ADDRESSES = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
