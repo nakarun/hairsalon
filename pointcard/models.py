@@ -1,7 +1,8 @@
 from django.db import models
+from hairsalon.models import Salon
+from accounts.models import BaseUser
 
 import uuid
-from hairsalon.models import Salon, BaseUser
 
 
 # Create your models here.

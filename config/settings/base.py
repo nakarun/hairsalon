@@ -126,7 +126,7 @@ USE_TZ = True
 # Authenticate #
 ################
 
-AUTH_USER_MODEL = 'hairsalon.BaseUser'
+AUTH_USER_MODEL = 'accounts.BaseUser'
 
 SITE_ID = 1
 
