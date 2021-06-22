@@ -28,7 +28,7 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'pointcard' %}">ポイントカード</a></li>
-                <li><a href="{% url 'account_email' %}">メールアドレス変更</a></li>
+                <li><a href="{% url 'account_email' %}">メールアドレス登録・変更</a></li>
                 <li><a href="{% url 'account_change_password' %}">パスワード変更</a></li>
                 <li><a href="{% url 'account_reset_password' %}">パスワードをお忘れの方</a></li>
                 <li><a href="{% url 'account_logout' %}">ログアウト</a></li>

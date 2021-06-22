@@ -140,7 +140,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # 登録できるメールアドレスの数
-ACCOUNT_MAX_EMAIL_ADDRESSES = 1
+ACCOUNT_MAX_EMAIL_ADDRESSES = 2
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
