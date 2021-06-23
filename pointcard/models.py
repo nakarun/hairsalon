@@ -9,9 +9,8 @@ import uuid
 
 class StampManager(models.Manager):
 
-    def get_query_set(self):
-        return super(StampManager, self).get_query_set() \
-            .filter(is_already_used=False).order_by('stamped_at')
+    def get_queryset(self):
+        return super().get_queryset().filter(is_already_used=False).order_by('stamped_at')
 
 
 class CustomerUser(BaseUser):
