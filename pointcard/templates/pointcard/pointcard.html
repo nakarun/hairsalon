@@ -7,16 +7,13 @@
         Name: {{ user }}様
         <hr>
         <table class="table table-bordered">
-            <tr class="stamp_frame">
-            {% for frame in stamp_frames %}
-                <td></td>
+            {% for v in vertical_cells %}
+                <tr class="stamp_frame">
+                {% for h in horizontal_cells %}
+                    <td></td>
+                {% endfor %}
+                </tr>
             {% endfor %}
-            </tr>
-            <tr class="stamp_frame">
-            {% for frame in stamp_frames %}
-                <td></td>
-            {% endfor %}
-            </tr>
         </table>
         <hr>
         <p>ご来店１回につき、１枠捺印致します。（お会計金額2,000円以上）</p>

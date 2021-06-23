@@ -17,10 +17,11 @@ class CustomerUser(BaseUser):
         verbose_name = "カスタマー"
 
 
-class SalonPointCard(models.Model):
+class PointCard(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     salon = models.ForeignKey(Salon, on_delete=models.PROTECT)
-    max_stamp = models.IntegerField()
+    vertical_cells_count = models.IntegerField()
+    horizontal_cells_count = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
