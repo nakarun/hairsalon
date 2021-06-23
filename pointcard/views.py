@@ -16,6 +16,8 @@ def get_stamp_frames(pointcard: PointCard, stamps: Union[QuerySet, List[Stamp]])
     for i, stamp in enumerate(stamps):
         v = i // pointcard.horizontal_cells_count
         h = i - v * pointcard.horizontal_cells_count
+        if v+1 > len(stamp_frames):
+            break
         stamp_frames[v][h] = stamp
 
     return stamp_frames
