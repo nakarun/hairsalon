@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from pointcard.models import CustomerUser, PointCard, Appointment
+from pointcard.models import CustomerUser, PointCard, Stamp
 
 
 class PointCardAdmin(admin.ModelAdmin):
@@ -12,4 +12,4 @@ class PointCardAdmin(admin.ModelAdmin):
 
 admin.site.register(CustomerUser)
 admin.site.register(PointCard, PointCardAdmin)
-admin.site.register(Appointment)
+admin.site.register(Stamp)

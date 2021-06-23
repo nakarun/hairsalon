@@ -7,12 +7,16 @@
         Name: {{ user }}様
         <hr>
         <table class="table table-bordered">
-            {% for v in vertical_cells %}
-                <tr class="stamp_frame">
-                {% for h in horizontal_cells %}
-                    <td></td>
+            {% for v in stamp_frames %}
+            <tr class="stamp_frame">
+                {% for h in v %}
+                <td>
+                    {% if h %}
+                    {{ h.stamped_at|date:"m/d" }}
+                    {% endif %}
+                </td>
                 {% endfor %}
-                </tr>
+            </tr>
             {% endfor %}
         </table>
         <hr>
