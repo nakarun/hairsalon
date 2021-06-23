@@ -1,5 +1,6 @@
 {% extends "account/base.html" %}
 
+{% load bootstrap4 %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
@@ -11,13 +12,17 @@
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% bootstrap_form form %}
+
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
+
   <hr>
+  {% buttons %}
   <button class="primaryAction btn btn-info btn-lg btn-block" type="submit">
     {% trans "Sign Up" %} &raquo;</button>
+  {% endbuttons %}
 </form>
 
 {% endblock %}

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+#####################
+# django-bootstrap4 #
+#####################
+
+BOOTSTRAP4 = {
+    'set_placeholder': False,
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
