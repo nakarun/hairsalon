@@ -1,6 +1,41 @@
 # ポイントカード機能がついた美容室用のHPをDjangoで作成してみました。
 - http://54.185.229.174/
 
+# カバレッジ率
+```
+Name                             Stmts   Miss Branch BrPart  Cover
+------------------------------------------------------------------
+accounts/__init__.py                 0      0      0      0   100%
+accounts/admin.py                    3      0      0      0   100%
+accounts/apps.py                     4      0      0      0   100%
+accounts/models.py                   9      0      0      0   100%
+accounts/tests.py                    1      0      0      0   100%
+config/__init__.py                   1      0      0      0   100%
+config/settings/base.py             32      0      0      0   100%
+config/settings/local.py             5      0      0      0   100%
+config/urls.py                       5      0      0      0   100%
+hairsalon/__init__.py                0      0      0      0   100%
+hairsalon/admin.py                   5      0      0      0   100%
+hairsalon/apps.py                    4      0      0      0   100%
+hairsalon/models.py                 31      3      0      0    90%
+hairsalon/tests/__init__.py          0      0      0      0   100%
+hairsalon/tests/test_views.py        7      0      0      0   100%
+hairsalon/urls.py                    3      0      0      0   100%
+hairsalon/views.py                  13      6      0      0    54%
+manage.py                           15      2      2      1    82%
+pointcard/__init__.py                0      0      0      0   100%
+pointcard/admin.py                   9      0      0      0   100%
+pointcard/apps.py                    4      0      0      0   100%
+pointcard/models.py                 38      3      0      0    92%
+pointcard/tests/__init__.py          0      0      0      0   100%
+pointcard/tests/test_models.py      21      0      4      0   100%
+pointcard/tests/test_view.py        38      0      8      0   100%
+pointcard/urls.py                    3      0      0      0   100%
+pointcard/views.py                  22      1      6      1    93%
+------------------------------------------------------------------
+TOTAL                              273     15     20      2    94%
+```
+
 # 環境構築
 
 - user追加
