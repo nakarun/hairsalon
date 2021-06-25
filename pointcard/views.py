@@ -26,7 +26,8 @@ def get_stamp_frames(pointcard: PointCard, stamps: Union[QuerySet, List[Stamp]])
 class PointCardView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
-        pointcard = PointCard.objects.get()
+        # TODO: salonでフィルターする
+        pointcard = PointCard.objects.first()
         stamps = Stamp.unused_objects.filter(customer=request.user)
 
         stamp_frames = get_stamp_frames(pointcard, stamps)
