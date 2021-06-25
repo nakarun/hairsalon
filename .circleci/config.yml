@@ -25,7 +25,7 @@ jobs:
     docker:
       - image: cimg/python:3.8
         environment:
-          DJANGO_SETTINGS_MODULE: config.settings.production
+          DJANGO_SETTINGS_MODULE: config.settings.test
           SECRET_KEY: $SECRET_KEY
     # Checkout the code as the first step. This is a dedicated CircleCI step.
     # The python orb's install-packages step will install the dependencies from a Pipfile via Pipenv by default.
