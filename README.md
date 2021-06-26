@@ -67,6 +67,5 @@ TOTAL                              273     15     20      2    94%
   - cryptography install : https://cryptography.io/en/latest/installation/#alpine
 - SSL化 : 
   - https://github.com/SteveLTN/https-portal
-  - https://docs.djangoproject.com/ja/3.2/ref/settings/#csrf-trusted-origins
 - CSS : https://f-tpl.com/tpl_087/
 - 現場で使えるDjangoの教科書シリーズ : https://zenn.dev/akiyoko/articles/6bc03e7f954570
