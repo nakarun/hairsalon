@@ -2,7 +2,9 @@ from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['hairsalon']
+
+DOMAIN = env('DOMAIN')
+ALLOWED_HOSTS = [DOMAIN]
 
 STATIC_ROOT = '/var/run/{}/static'.format(PROJECT_NAME)
 
@@ -28,5 +30,4 @@ EMAIL_USE_TLS = True
 # Security #
 ############
 
-DOMAIN = env('DOMAIN')
 CSRF_TRUSTED_ORIGINS = [DOMAIN]

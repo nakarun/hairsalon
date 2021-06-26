@@ -14,6 +14,8 @@ services:
       - gunicorn
     ports:
       - 8000:8000
+    environment:
+      DOMAIN: ${DOMAIN}
     volumes:
       - ./hairsalon.conf:/etc/nginx/conf.d/default.conf
       - hairsalon:/var/run/hairsalon
