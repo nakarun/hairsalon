@@ -2,7 +2,9 @@ from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['34.208.197.168']
+
+DOMAIN = env('DOMAIN')
+ALLOWED_HOSTS = [DOMAIN]
 
 STATIC_ROOT = '/var/run/{}/static'.format(PROJECT_NAME)
 
