@@ -1,26 +1,27 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import View
+from django.views.generic import TemplateView
+from django.views.generic.detail import DetailView
 
 from .models import News
 
 
 # Create your views here.
 
-class TopView(View):
-    def get(self, request, *args, **kwargs):
+class TopView(TemplateView):
+    template_name = 'hairsalon/top.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         news = News.objects.order_by('-published')
-        context = {
-            'news': news,
-            'current_menu_item': 'top',
-        }
-        return render(request, 'hairsalon/top.html', context)
+        context['news'] = news
+        context['current_menu_item'] = 'top'
+        return context
 
 
-class NewsDetailView(View):
-    def get(self, request, news_id, *args, **kwargs):
-        news_detail = get_object_or_404(News, pk=news_id)
-        context = {
-            'news_detail': news_detail,
-            'current_menu_item': 'news',
-        }
-        return render(request, 'hairsalon/news_detail.html', context)
+class NewsDetailView(DetailView):
+    template = 'hairsalon/news_detail.html'
+    model = News
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_menu_item'] = 'news'
+        return context
