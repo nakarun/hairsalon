@@ -65,7 +65,6 @@ TOTAL                              273     15     20      2    94%
 - Top画像 : https://pixabay.com/ja/vectors/%e7%90%86%e5%ae%b9-haircutting-%e9%a0%ad-33118/
 - Docker : https://qiita.com/str416yb/items/7324b99b9f05b9089b80
   - cryptography install : https://cryptography.io/en/latest/installation/#alpine
-- SSL化 : 
-  - https://github.com/SteveLTN/https-portal
+- SSL化 : https://github.com/SteveLTN/https-portal
 - CSS : https://f-tpl.com/tpl_087/
 - 現場で使えるDjangoの教科書シリーズ : https://zenn.dev/akiyoko/articles/6bc03e7f954570
