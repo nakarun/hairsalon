@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'bootstrap4',
+    'django_icons',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 BOOTSTRAP4 = {
     'set_placeholder': False,
+}
+
+###################################################
+# django-icons # bootstrap4はiconをサポートしていない #
+###################################################
+
+DJANGO_ICONS = {
+    "ICONS": {
+        "star": {"name": "fas fa-star fa-5x star-orange"},
+    },
 }
 
 # Internationalization

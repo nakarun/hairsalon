@@ -299,3 +299,10 @@ tr.stamp_frame {
     display: block;
     float: right;
 }
+
+/*************
+/* iconに使う色
+*************/
+.star-orange {
+    color: #fecb81;
+}
