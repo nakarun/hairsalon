@@ -125,7 +125,7 @@ BOOTSTRAP4 = {
 
 DJANGO_ICONS = {
     "ICONS": {
-        "star": {"name": "fas fa-star fa-5x star-orange"},
+        "stamp": {"name": "fas fa-star stamp-color"},
     },
 }
 

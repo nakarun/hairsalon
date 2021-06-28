@@ -286,9 +286,7 @@ ul.footnav li{
 
 
 tr.stamp_frame {
-   line-height: 50px;
-   min-height: 50px;
-   height: 50px;
+   line-height: 70px;
 }
 
 /*************
@@ -301,8 +299,13 @@ tr.stamp_frame {
 }
 
 /*************
-/* iconに使う色
+/* icon
 *************/
-.star-orange {
+
+.stamp-color {
     color: #fecb81;
+}
+
+.fa-stack-1x {
+    font-size: 0.6em;
 }

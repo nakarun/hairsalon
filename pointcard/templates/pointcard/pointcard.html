@@ -13,8 +13,14 @@
                 {% for h in v %}
                 <td>
                     {% if h %}
-                    {% icon 'star' %}
-                    {{ h.stamped_at|date:"m/d" }}
+                    <span class="fa-stack fa-2x">
+                        <span class="fa-stack-2x">
+                            {% icon 'stamp' %}
+                        </span>
+                        <span class="fa-stack-1x">
+                            {{ h.stamped_at|date:"n/d" }}
+                        </span>
+                    </span>
                     {% endif %}
                 </td>
                 {% endfor %}
