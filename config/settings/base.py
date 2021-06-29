@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'bootstrap4',
     'django_icons',
+    'rest_framework',
+    'apiv1.apps.Apiv1Config',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'accounts', 'templates'),
+            os.path.join(BASE_DIR, 'frontend'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
