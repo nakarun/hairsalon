@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <router-view />
+    <main class="container mt-5 p-5">
+      <router-view />
+    </main>
   </v-app>
 </template>
 

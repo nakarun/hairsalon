@@ -1,39 +1,38 @@
 <template>
   <div id="login-page">
-    <main class="container mt-5 p-5">
-      <p class="h5 mb-5">Login</p>
-        <v-form
-          ref="form"
-          v-model="valid"
-          lazy-validation
-        >
-          <v-text-field
-            v-model="username"
-            :counter="10"
-            :rules="usernameRules"
-            label="Name"
-            required
-          ></v-text-field>
+    <p class="h5 mb-5">Login</p>
+    <v-form
+      ref="form"
+      v-model="valid"
+      lazy-validation
+    >
+      <v-text-field
+        v-model="username"
+        :counter="10"
+        :rules="usernameRules"
+        label="Name"
+        required
+      ></v-text-field>
 
-          <v-text-field
-            v-model="password"
-            :rules="passwordRules"
-            label="Password"
-            required
-          ></v-text-field>
+      <v-text-field
+        v-model="password"
+        :rules="passwordRules"
+        label="Password"
+        type="password"
+        required
+      ></v-text-field>
 
-          <v-btn
-            :disabled="!valid"
-            color="primary"
-            class="mt-4"
-            block
-            @click="validate"
-          >
-            Login
-          </v-btn>
+      <v-btn
+        :disabled="!valid"
+        color="primary"
+        class="mt-4"
+        block
+        @click="validate"
+      >
+        Login
+      </v-btn>
 
-        </v-form>
-    </main>
+    </v-form>
   </div>
 </template>
 
