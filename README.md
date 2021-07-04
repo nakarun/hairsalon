@@ -1,8 +1,13 @@
 # 概要
 - ポイントカード機能がついた美容室用のHPをDjangoで作成してみました。
-- https://sample-hair-salon.com/
-- testuser: やざわ
-- password: 9ijn8uhb
+- 利用者側画面
+  - https://sample-hair-salon.com/
+  - testuser: やざわ
+  - password: 9ijn8uhb
+- サロン側管理画面
+  - https://sample-hair-salon.com/owner/
+  - teststaff: サロンスタッフ
+  - password: 9ijn8uhb
 
 # Features
 - サロン側の管理画面を作成します。
