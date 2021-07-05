@@ -1,5 +1,5 @@
 <template>
-  <div class="post-info">
+  <div class="posts">
     <v-card>
       <v-card-title>お知らせ投稿一覧</v-card-title>
       <v-data-table
@@ -35,7 +35,7 @@ import datetimeFormat from "@/services/datetimeFormat";
 
 
 export default {
-  name: "PostInfo",
+  name: "Posts",
   computed: {
     formattedPosts() {
       const formattedPosts = [];
@@ -97,5 +97,7 @@ export default {
 </script>
 
 <style scoped>
-
+.posts {
+  padding: 10px;
+}
 </style>

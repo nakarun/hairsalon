@@ -1,17 +1,25 @@
 <template>
   <div class="home">
-    <PostInfo />
+    <Posts ref="posts"/>
+    <Post @posted="fetchPosts"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PostInfo from "@/components/PostInfo"
+import Posts from "@/components/Posts"
+import Post from "@/components/Post"
 
 export default {
   name: "Home",
   components: {
-    PostInfo,
+    Posts,
+    Post
   },
+  methods: {
+    fetchPosts() {
+      this.$refs.posts.fetchItems();
+    }
+  }
 };
 </script>
