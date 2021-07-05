@@ -36,19 +36,24 @@ export default {
   data: () => ({
     pointcards: [],
   }),
+  methods: {
+    fetchItems() {
+      api.get('/pointcard/', {
+        params: {
+          salon: '17fff40c-bafc-4375-8e65-31d531e26997',
+        }
+      })
+      .then(response => {
+        this.pointcards = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    }
+  },
   created: function() {
-    api.get('/pointcard/', {
-      params: {
-        salon: '17fff40c-bafc-4375-8e65-31d531e26997',
-      }
-    })
-    .then(response => {
-      this.pointcards = response.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-  }
+    this.fetchItems();
+  },
 }
 </script>
 
