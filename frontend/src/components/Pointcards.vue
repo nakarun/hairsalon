@@ -38,9 +38,10 @@ export default {
   }),
   methods: {
     fetchItems() {
+      const salon = this.$store.state.salon.uuid;
       api.get('/pointcard/', {
         params: {
-          salon: '17fff40c-bafc-4375-8e65-31d531e26997',
+          salon: salon,
         }
       })
       .then(response => {

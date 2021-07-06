@@ -54,8 +54,9 @@ export default {
       this.$refs.form.reset();
     },
     createPointcard() {
+      const salon = this.$store.state.salon.uuid;
       api.post('/pointcard/', {
-        salon: '17fff40c-bafc-4375-8e65-31d531e26997',
+        salon: salon,
         vertical_cells_count: this.v,
         horizontal_cells_count: this.h,
       })
