@@ -1,7 +1,14 @@
 from rest_framework import serializers
 
-from hairsalon.models import News
+from hairsalon.models import Salon, News
 from pointcard.models import PointCard
+
+
+class SalonSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Salon
+        fields = '__all__'
 
 
 class NewsSerializer(serializers.ModelSerializer):

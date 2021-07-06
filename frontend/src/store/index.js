@@ -8,15 +8,18 @@ Vue.use(Vuex);
 const authModule = {
   namespaced: true,
   state: {
+    useruuid: "",
     username: "",
     isLoggedIn: false
   },
   mutations: {
     set(state, payload) {
+      state.useruuid = payload.user.uuid;
       state.username = payload.user.username;
       state.isLoggedIn = true;
     },
     clear(state) {
+      state.useruuid = "";
       state.username = "";
       state.isLoggedIn = false;
     }
@@ -117,10 +120,48 @@ const messageModule = {
   }
 };
 
+// salon data
+const salonModule = {
+  namespaced: true,
+  state: {
+    uuid: "",
+    salonname: "",
+  },
+  mutations: {
+    set(state, payload) {
+      state.uuid = payload.salon.uuid;
+      state.salonname = payload.salon.name;
+    },
+    clear(state) {
+      state.uuid = "";
+      state.salonname = "";
+    }
+  },
+  actions: {
+    getSalonData(context, payload) {
+      return api
+        .get('/salon/', {
+          params: {
+            staff: payload.staff,
+          }
+        })
+        .then(response => {
+          const salon = response.data[0];
+          // store の salon data を更新
+          context.commit("set", { salon: salon });
+        })
+        .catch(function(error) {
+          console.log(error);
+        })
+    },
+  }
+}
+
 const store = new Vuex.Store({
   modules: {
     auth: authModule,
-    message: messageModule
+    message: messageModule,
+    salon: salonModule,
   }
 });
 

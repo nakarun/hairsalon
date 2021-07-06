@@ -73,13 +73,18 @@
             password: this.password
           })
           .then(() => {
-            console.log("Login succeeded.");
-            this.$store.dispatch("message/setInfoMessage", {
-              message: "ログインしました。"
+            this.$store.dispatch("salon/getSalonData", {
+              staff: this.$store.state.auth.useruuid,
+            })
+            .then(() => {
+              console.log("Login succeeded.");
+              this.$store.dispatch("message/setInfoMessage", {
+                message: "ログインしました。"
+              });
+              // クエリ文字列に「next」がなければ、ホーム画面へ
+              const next = this.$route.query.next || "/";
+              this.$router.replace(next);
             });
-            // クエリ文字列に「next」がなければ、ホーム画面へ
-            const next = this.$route.query.next || "/";
-            this.$router.replace(next);
           });
       }
     },

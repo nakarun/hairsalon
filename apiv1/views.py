@@ -3,12 +3,32 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django_filters import rest_framework as filters
 
-from hairsalon.models import News
+from hairsalon.models import Salon, News
 from pointcard.models import PointCard
-from .serializers import NewsSerializer, PointCardSerializer
+from .serializers import SalonSerializer, NewsSerializer, PointCardSerializer
 
 
 # Create your views here.
+
+class SalonFilter(filters.FilterSet):
+    """
+    SalonStaff.uuidからSalonをretreiveするためのfilter
+    """
+
+    staff = filters.UUIDFilter(field_name='staffs')
+
+    class Meta:
+        model = Salon
+        fields = '__all__'
+
+
+class SalonViewSet(viewsets.ModelViewSet):
+    queryset = Salon.objects.all()
+    serializer_class = SalonSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    filter_backends = [filters.DjangoFilterBackend]
+    filterset_class = SalonFilter
+
 
 class NewsViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()
