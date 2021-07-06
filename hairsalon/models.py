@@ -1,7 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
-from accounts.models import BaseUser
 import uuid
 
 
@@ -20,14 +19,6 @@ class Salon(models.Model):
 
     class Meta:
         verbose_name = "美容室"
-
-
-class SalonStaff(BaseUser):
-    salon = models.ForeignKey(Salon, on_delete=models.CASCADE)
-    is_owner = models.BooleanField(default=False)
-
-    class Meta:
-        verbose_name = "サロンスタッフ"
 
 
 class News(models.Model):
