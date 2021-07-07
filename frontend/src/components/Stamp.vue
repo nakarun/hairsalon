@@ -14,6 +14,7 @@
           label="ポイントカードを選択する"
           item-text="uuid"
           attach
+          :menu-props="{ top: false, offsetY: true }"
           return-object
         >
         </v-select>
@@ -23,6 +24,7 @@
           label="利用者を選択する"
           item-text="username"
           attach
+          :menu-props="{ top: false, offsetY: true }"
           return-object
         >
         </v-select>
