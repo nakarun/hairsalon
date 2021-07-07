@@ -29,31 +29,19 @@
 </template>
 
 <script>
-import api from "@/services/api";
 
 export default {
   name: "Pointcards",
   data: () => ({
-    pointcards: [],
   }),
-  methods: {
-    fetchItems() {
-      const salon = this.$store.state.salon.uuid;
-      api.get('/pointcard/', {
-        params: {
-          salon: salon,
-        }
-      })
-      .then(response => {
-        this.pointcards = response.data;
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+  computed: {
+    pointcards: function () {
+      return this.$store.state.pointcards.pointcards;
     }
   },
+  methods: {
+  },
   created: function() {
-    this.fetchItems();
   },
 }
 </script>

@@ -146,22 +146,56 @@ const salonModule = {
           }
         })
         .then(response => {
-          const salon = response.data[0];
-          // store の salon data を更新
-          context.commit("set", { salon: salon });
+          if (typeof response.data === 'object') {
+            // store の salon data を更新
+            const salon = response.data;
+            context.commit("set", { salon: salon });
+          }
+          else {
+            // 今の所想定していない
+          }
         })
         .catch(function(error) {
           console.log(error);
         })
     },
   }
-}
+};
+
+const pointcardsModule = {
+  namespaced: true,
+  state: {
+    pointcards: [],
+  },
+  mutations: {
+    set(state, payload) {
+      state.pointcards = payload.pointcards;
+    },
+    clear(state) {
+      state.pointcards = [];
+    }
+  },
+  actions: {
+    getPointcards(context, payload) {
+      return api.get('/pointcard/', {
+        params: {
+          salon: payload.salon,
+        }
+      })
+      .then(response => {
+        const pointcards = response.data;
+        context.commit("set", { pointcards: pointcards });
+      })
+    }
+  },
+};
 
 const store = new Vuex.Store({
   modules: {
     auth: authModule,
     message: messageModule,
     salon: salonModule,
+    pointcards: pointcardsModule,
   }
 });
 

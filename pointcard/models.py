@@ -32,7 +32,7 @@ class Stamp(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     customer = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
     pointcard = models.ForeignKey(PointCard, on_delete=models.PROTECT)
-    stamped_at = models.DateTimeField()
+    stamped_at = models.DateField()
     is_already_used = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
