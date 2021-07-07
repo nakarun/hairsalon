@@ -1,15 +1,21 @@
 <template>
   <div class="home">
-    <Stamp />
-    <Pointcards ref="pointcards"/>
-    <CreatePointcard @created="fetchPointcards"/>
-    <Posts ref="posts"/>
-    <Post @posted="fetchPosts"/>
+    <GlobalHeader />
+    <GlobalMessage />
+    <main class="container mt-5 p-5">
+      <Stamp />
+      <Pointcards ref="pointcards"/>
+      <CreatePointcard @created="fetchPointcards"/>
+      <Posts ref="posts"/>
+      <Post @posted="fetchPosts"/>
+    </main>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import GlobalHeader from "@/components/GlobalHeader";
+import GlobalMessage from "@/components/GlobalMessage";
 import Stamp from "@/components/Stamp"
 import Pointcards from "@/components/Pointcards"
 import CreatePointcard from "@/components/CreatePointcard";
@@ -19,6 +25,8 @@ import Post from "@/components/Post"
 export default {
   name: "Home",
   components: {
+    GlobalHeader,
+    GlobalMessage,
     Stamp,
     Pointcards,
     CreatePointcard,

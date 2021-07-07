@@ -1,39 +1,41 @@
 <template>
-  <div id="login-page">
-    <p class="h5 mb-5">Login</p>
-    <v-form
-      ref="form"
-      v-model="valid"
-      lazy-validation
-    >
-      <v-text-field
-        v-model="username"
-        :counter="10"
-        :rules="usernameRules"
-        label="Name"
-        required
-      ></v-text-field>
-
-      <v-text-field
-        v-model="password"
-        :rules="passwordRules"
-        label="Password"
-        type="password"
-        required
-      ></v-text-field>
-
-      <v-btn
-        :disabled="!valid"
-        color="primary"
-        class="mt-4"
-        block
-        @click="validate"
+  <main class="container mt-5 p-5">
+    <div id="login-page">
+      <p class="h5 mb-5">Login</p>
+      <v-form
+        ref="form"
+        v-model="valid"
+        lazy-validation
       >
-        Login
-      </v-btn>
+        <v-text-field
+          v-model="username"
+          :counter="10"
+          :rules="usernameRules"
+          label="Name"
+          required
+        ></v-text-field>
 
-    </v-form>
-  </div>
+        <v-text-field
+          v-model="password"
+          :rules="passwordRules"
+          label="Password"
+          type="password"
+          required
+        ></v-text-field>
+
+        <v-btn
+          :disabled="!valid"
+          color="primary"
+          class="mt-4"
+          block
+          @click="validate"
+        >
+          Login
+        </v-btn>
+
+      </v-form>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -87,5 +89,9 @@
 </script>
 
 <style scoped>
+main.container {
+  border: 1px solid #cccccc;
+  width: 600px;
 
+}
 </style>

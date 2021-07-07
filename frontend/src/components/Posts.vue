@@ -82,9 +82,9 @@ export default {
     deleteItem(item) {
       console.log(item);
       api.delete(`/news/${item.id}/`)
-      .then(
-        this.fetchItems()
-      )
+      .then(() => {
+        this.fetchItems();
+      })
       .catch(function(error) {
         console.log(error);
       })
