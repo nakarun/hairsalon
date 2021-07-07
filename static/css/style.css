@@ -137,7 +137,7 @@ a#menu{display:none;}
 	font-size:10px;
 }
 
-// #mainNav ul ul{width:160px;background:#fff;}
+/*  #mainNav ul ul{width:160px;background:#fff;} */
 
 #mainNav li ul{
     display:none;
@@ -284,9 +284,17 @@ ul.footnav li{
   display: inline-block;
 }
 
+table.stamp-table {
+    table-layout: fixed;
+}
 
-tr.stamp_frame {
-   line-height: 70px;
+tr.frame-line {
+  height: 5em;
+}
+
+td.stamp-frame {
+    text-align: center;
+    vertical-align: middle;
 }
 
 /*************
@@ -308,4 +316,8 @@ tr.stamp_frame {
 
 .fa-stack-1x {
     font-size: 0.6em;
+}
+
+.fa-stack-2x {
+    font-size: 5em;
 }
