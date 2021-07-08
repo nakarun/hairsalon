@@ -7,13 +7,13 @@
     <div class="card-body">
         Name: {{ user }}様
         <hr>
-        <table class="table table-bordered">
+        <table class="table table-bordered stamp-table">
             {% for v in stamp_frames %}
-            <tr class="stamp_frame">
+            <tr class="frame-line">
                 {% for h in v %}
-                <td>
+                <td class="stamp-frame">
                     {% if h %}
-                    <span class="fa-stack fa-2x">
+                    <span class="fa-stack fa-lg">
                         <span class="fa-stack-2x">
                             {% icon 'stamp' %}
                         </span>

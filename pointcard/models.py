@@ -1,6 +1,6 @@
 from django.db import models
 from hairsalon.models import Salon
-from accounts.models import BaseUser
+from accounts.models import CustomerUser
 
 import uuid
 
@@ -11,16 +11,6 @@ class StampManager(models.Manager):
 
     def get_queryset(self):
         return super().get_queryset().filter(is_already_used=False).order_by('stamped_at')
-
-
-class CustomerUser(BaseUser):
-    nick_name = models.CharField(verbose_name='ニックネーム', max_length=30)
-
-    def __str__(self):
-        return self.nick_name
-
-    class Meta:
-        verbose_name = "カスタマー"
 
 
 class PointCard(models.Model):
@@ -40,9 +30,9 @@ class PointCard(models.Model):
 
 class Stamp(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    customer = models.ForeignKey(BaseUser, on_delete=models.CASCADE)
-    salon = models.ForeignKey(Salon, on_delete=models.PROTECT)
-    stamped_at = models.DateTimeField()
+    customer = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
+    pointcard = models.ForeignKey(PointCard, on_delete=models.PROTECT)
+    stamped_at = models.DateField()
     is_already_used = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

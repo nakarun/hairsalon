@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from pointcard.models import CustomerUser, PointCard, Stamp
+from pointcard.models import PointCard, Stamp
 
 
 class PointCardAdmin(admin.ModelAdmin):
@@ -10,6 +10,5 @@ class PointCardAdmin(admin.ModelAdmin):
     list_display = ('uuid', 'salon', 'vertical_cells_count', 'horizontal_cells_count', 'created_at', 'updated_at')
 
 
-admin.site.register(CustomerUser)
 admin.site.register(PointCard, PointCardAdmin)
 admin.site.register(Stamp)

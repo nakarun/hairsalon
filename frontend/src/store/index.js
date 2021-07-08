@@ -8,15 +8,18 @@ Vue.use(Vuex);
 const authModule = {
   namespaced: true,
   state: {
+    useruuid: "",
     username: "",
     isLoggedIn: false
   },
   mutations: {
     set(state, payload) {
+      state.useruuid = payload.user.uuid;
       state.username = payload.user.username;
       state.isLoggedIn = true;
     },
     clear(state) {
+      state.useruuid = "";
       state.username = "";
       state.isLoggedIn = false;
     }
@@ -117,10 +120,82 @@ const messageModule = {
   }
 };
 
+// salon data
+const salonModule = {
+  namespaced: true,
+  state: {
+    uuid: "",
+    salonname: "",
+  },
+  mutations: {
+    set(state, payload) {
+      state.uuid = payload.salon.uuid;
+      state.salonname = payload.salon.name;
+    },
+    clear(state) {
+      state.uuid = "";
+      state.salonname = "";
+    }
+  },
+  actions: {
+    getSalonData(context, payload) {
+      return api
+        .get('/salon/', {
+          params: {
+            staff: payload.staff,
+          }
+        })
+        .then(response => {
+          if (typeof response.data === 'object') {
+            // store の salon data を更新
+            const salon = response.data;
+            context.commit("set", { salon: salon });
+          }
+          else {
+            // 今の所想定していない
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        })
+    },
+  }
+};
+
+const pointcardsModule = {
+  namespaced: true,
+  state: {
+    pointcards: [],
+  },
+  mutations: {
+    set(state, payload) {
+      state.pointcards = payload.pointcards;
+    },
+    clear(state) {
+      state.pointcards = [];
+    }
+  },
+  actions: {
+    getPointcards(context, payload) {
+      return api.get('/pointcard/', {
+        params: {
+          salon: payload.salon,
+        }
+      })
+      .then(response => {
+        const pointcards = response.data;
+        context.commit("set", { pointcards: pointcards });
+      })
+    }
+  },
+};
+
 const store = new Vuex.Store({
   modules: {
     auth: authModule,
-    message: messageModule
+    message: messageModule,
+    salon: salonModule,
+    pointcards: pointcardsModule,
   }
 });
 
