@@ -2,7 +2,7 @@
 - ポイントカード機能がついた美容室用のHPをDjangoで作成してみました。
 - 利用者側画面
   - https://sample-hair-salon.com/
-  - testuser: やざわ
+  - testuser: 利用者太郎
   - password: 9ijn8uhb
 - サロン側管理画面
   - https://sample-hair-salon.com/owner/
@@ -17,34 +17,35 @@
 Name                             Stmts   Miss Branch BrPart  Cover
 ------------------------------------------------------------------
 accounts/__init__.py                 0      0      0      0   100%
-accounts/admin.py                    3      0      0      0   100%
+accounts/admin.py                   32     29      0      0     9%
 accounts/apps.py                     4      0      0      0   100%
-accounts/models.py                   9      0      0      0   100%
+accounts/models.py                  21     15      0      0    29%
 accounts/tests.py                    1      0      0      0   100%
 config/__init__.py                   1      0      0      0   100%
-config/settings/base.py             32      0      0      0   100%
-config/settings/local.py             5      0      0      0   100%
-config/urls.py                       5      0      0      0   100%
+config/settings/base.py             36     18      0      0    50%
+config/settings/local.py             9      4      0      0    56%
+config/urls.py                       6      1      0      0    83%
 hairsalon/__init__.py                0      0      0      0   100%
-hairsalon/admin.py                   5      0      0      0   100%
+hairsalon/admin.py                   8      3      0      0    62%
 hairsalon/apps.py                    4      0      0      0   100%
-hairsalon/models.py                 31      3      0      0    90%
+hairsalon/models.py                 25      6      0      0    76%
 hairsalon/tests/__init__.py          0      0      0      0   100%
 hairsalon/tests/test_views.py        7      0      0      0   100%
 hairsalon/urls.py                    3      0      0      0   100%
-hairsalon/views.py                  13      6      0      0    54%
+hairsalon/views.py                  18     12      0      0    33%
 manage.py                           15      2      2      1    82%
 pointcard/__init__.py                0      0      0      0   100%
-pointcard/admin.py                   9      0      0      0   100%
+pointcard/admin.py                   8      0      0      0   100%
 pointcard/apps.py                    4      0      0      0   100%
-pointcard/models.py                 38      3      0      0    92%
+pointcard/models.py                 32      9      0      0    72%
 pointcard/tests/__init__.py          0      0      0      0   100%
-pointcard/tests/test_models.py      21      0      4      0   100%
-pointcard/tests/test_view.py        38      0      8      0   100%
+pointcard/tests/test_models.py      22      6      4      2    69%
+pointcard/tests/test_view.py        39     12      8      4    66%
 pointcard/urls.py                    3      0      0      0   100%
-pointcard/views.py                  22      1      6      1    93%
+pointcard/views.py                  22      8      6      5    54%
 ------------------------------------------------------------------
-TOTAL                              273     15     20      2    94%
+TOTAL                              320    125     20     12    60%
+
 ```
 
 # 環境構築

@@ -2,9 +2,10 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 
-from datetime import datetime
+import datetime
 import pytz
 
+from accounts.models import CustomerUser
 from hairsalon.models import Salon
 from ..models import PointCard, Stamp
 from ..views import get_stamp_frames
@@ -19,13 +20,13 @@ class TestPointCardView(TestCase):
         self.testsalon = Salon.objects.create(name='testsalon')
         self.testpointcard = PointCard.objects.create(
             salon=self.testsalon, vertical_cells_count=2, horizontal_cells_count=5)
-        self.testuser = get_user_model().objects.create_user(username='testuser', password='pass')
+        self.testuser = CustomerUser.objects.create_user(username='testuser', password='pass')
         stamps = []
         for d in range(1, 12):
             stamp = Stamp(
                 customer=self.testuser,
-                salon=self.testsalon,
-                stamped_at=datetime(2021, d, 1, 12, 0, 0, 0, pytz.timezone('Asia/Tokyo'))
+                pointcard=self.testpointcard,
+                stamped_at=datetime.date(2021, d, 1),
             )
             if d == 3:
                 stamp.is_already_used = True
@@ -36,7 +37,7 @@ class TestPointCardView(TestCase):
         """
         PointCardとStampsを渡すとPointCard.vertical_cells_count x PointCard.horizontal_cells_countの二次元配列を返してくれる
         """
-        stamps = Stamp.unused_objects.filter(customer=self.testuser, salon=self.testsalon)
+        stamps = Stamp.unused_objects.filter(customer=self.testuser, pointcard=self.testpointcard)
         stamp_frames = get_stamp_frames(self.testpointcard, stamps)
         self.assertEqual(len(stamp_frames), self.testpointcard.vertical_cells_count)
         self.assertEqual(len(stamp_frames[0]), self.testpointcard.horizontal_cells_count)
