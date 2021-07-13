@@ -35,7 +35,6 @@ export default {
   },
   methods: {
     fetchPointcards() {
-      console.log(this.$store.state.salon.uuid);
       this.$store.dispatch("pointcards/getPointcards", {
         salon: this.$store.state.salon.uuid,
       })
@@ -48,13 +47,19 @@ export default {
     }
   },
   created: function () {
-    // staff.uuidからsalon情報を取得
-    this.$store.dispatch("salon/getSalonData", {
-      staff: this.$store.state.auth.useruuid,
+    // user.uuidからstaff情報を取得
+    this.$store.dispatch("staff/getStaffData", {
+      useruuid: this.$store.state.auth.useruuid,
     })
     .then(() => {
-      // salonに紐づくポイントカードを取得
-      this.fetchPointcards();
+      // staff.salon.uuidからsalon情報を取得
+      this.$store.dispatch("salon/getSalonData", {
+        salon: this.$store.state.staff.salon,
+      })
+      .then(() => {
+        // salonに紐づくポイントカードを取得
+        this.fetchPointcards();
+      })
     })
   },
 };
