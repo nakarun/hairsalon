@@ -201,3 +201,19 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'USER_ID_FIELD': 'uuid',
 }
+
+##################
+# Email settings #
+##################
+
+# 実際にメールを送信
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+# AWS Settings
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+# 以下はバージニア北部リージョンであれば省略できる
+# AWS_SES_REGION_NAME = env('AWS_SES_REGION_NAME')
+# AWS_SES_REGION_ENDPOINT = env('AWS_SES_REGION_ENDPOINT')
+
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = env('DEFAULT_FROM_EMAIL')
