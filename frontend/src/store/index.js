@@ -120,6 +120,34 @@ const messageModule = {
   }
 };
 
+const staffModule = {
+  namespaced: true,
+  state: {
+    salon: "",
+  },
+  mutations: {
+    set(state, payload) {
+      state.salon = payload.staff.salon;
+    },
+    clear(state) {
+      state.salon = "";
+    }
+  },
+  actions: {
+    getStaffData(context, payload) {
+      return api
+          .get(`/staff/${payload.useruuid}/`)
+          .then(response => {
+            const staff = response.data;
+            context.commit("set", { staff: staff })
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+    }
+  }
+};
+
 // salon data
 const salonModule = {
   namespaced: true,
@@ -140,20 +168,11 @@ const salonModule = {
   actions: {
     getSalonData(context, payload) {
       return api
-        .get('/salon/', {
-          params: {
-            staff: payload.staff,
-          }
-        })
+        .get(`/salon/${payload.salon}/`)
         .then(response => {
-          if (typeof response.data === 'object') {
-            // store の salon data を更新
-            const salon = response.data;
-            context.commit("set", { salon: salon });
-          }
-          else {
-            // 今の所想定していない
-          }
+          // store の salon data を更新
+          const salon = response.data;
+          context.commit("set", { salon: salon });
         })
         .catch(function(error) {
           console.log(error);
@@ -194,6 +213,7 @@ const store = new Vuex.Store({
   modules: {
     auth: authModule,
     message: messageModule,
+    staff: staffModule,
     salon: salonModule,
     pointcards: pointcardsModule,
   }

@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from hairsalon.models import Salon, News
 from pointcard.models import PointCard, Stamp
-from accounts.models import CustomerUser
+from accounts.models import SalonStaff, CustomerUser
 
 
 class SalonSerializer(serializers.ModelSerializer):
@@ -30,6 +30,13 @@ class StampSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Stamp
+        fields = '__all__'
+
+
+class SalonStaffSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = SalonStaff
         fields = '__all__'
 
 
