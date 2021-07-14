@@ -10,7 +10,7 @@
   - password: 9ijn8uhb
 
 # Features
-- サロン側の管理画面を作成します。
+- スマホ画面に対応します。
 
 # カバレッジ率
 ```
@@ -65,7 +65,16 @@ TOTAL                              320    125     20     12    60%
   - sudo usermod -aG docker hairsalon
 - docker-compose install
   - sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-  - sudo chmod +x /usr/local/bin/docker-compose  
+  - sudo chmod +x /usr/local/bin/docker-compose
+  
+# Email System
+- AWS SES
+- 送信ログを記録 : Amazon Elasticsearch Service (Amazon ES) と Amazon Kinesis を使用
+  - https://blog.serverworks.co.jp/2020/12/04/190000
+  - https://blog.denet.co.jp/amazon-ses-log/
+  - X-SES-CONFIGURATION-SET : これを設定しないとfirehoseにデータ送信されない
+    - https://github.com/django-ses/django-ses#ses-event-monitoring-with-configuration-sets
+    - https://docs.aws.amazon.com/ja_jp/ses/latest/DeveloperGuide/using-configuration-sets-in-email.html
 
 # 参考一覧
 - Top画像 : https://pixabay.com/ja/vectors/%e7%90%86%e5%ae%b9-haircutting-%e9%a0%ad-33118/
