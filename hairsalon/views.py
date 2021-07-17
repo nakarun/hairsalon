@@ -25,3 +25,12 @@ class NewsDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['current_menu_item'] = 'news'
         return context
+
+
+class MapView(TemplateView):
+    template_name = 'hairsalon/map.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_menu_item'] = 'map'
+        return context
