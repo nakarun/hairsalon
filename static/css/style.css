@@ -263,7 +263,8 @@ ul.footnav li{
 
 
 .owner-message {
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 200%;
 }
 
 /*************
