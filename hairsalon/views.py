@@ -17,6 +17,17 @@ class TopView(TemplateView):
         return context
 
 
+class NewsView(TemplateView):
+    template_name = 'hairsalon/news.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        news = News.objects.order_by('-published')
+        context['news'] = news
+        context['current_menu_item'] = 'news'
+        return context
+
+
 class NewsDetailView(DetailView):
     template = 'hairsalon/news_detail.html'
     model = News
