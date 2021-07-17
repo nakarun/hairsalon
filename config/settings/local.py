@@ -25,4 +25,4 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 # This will avoid the need for an SMTP server as e-mails will be printed to the console.
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
