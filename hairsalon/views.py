@@ -7,8 +7,11 @@ from accounts.models import SalonStaff
 
 # Create your views here.
 
-class TopView(TemplateView):
+class ContentView(TemplateView):
     template_name = 'hairsalon/content.html'
+
+
+class TopView(ContentView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -24,8 +27,7 @@ class TopView(TemplateView):
         return context
 
 
-class GreetingView(TemplateView):
-    template_name = 'hairsalon/content.html'
+class GreetingView(ContentView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -36,8 +38,7 @@ class GreetingView(TemplateView):
         return context
 
 
-class MenuView(TemplateView):
-    template_name = 'hairsalon/content.html'
+class MenuView(ContentView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -47,8 +48,18 @@ class MenuView(TemplateView):
         return context
 
 
-class NewsView(TemplateView):
-    template_name = 'hairsalon/content.html'
+class StylistView(ContentView):
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        stylists = SalonStaff.objects.all()
+        context['stylists'] = stylists
+        context['page_title'] = 'スタイリスト'
+        context['current_menu_item'] = 'stylist'
+        return context
+
+
+class NewsView(ContentView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -69,8 +80,7 @@ class NewsDetailView(DetailView):
         return context
 
 
-class MapView(TemplateView):
-    template_name = 'hairsalon/content.html'
+class MapView(ContentView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
