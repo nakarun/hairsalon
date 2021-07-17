@@ -19,6 +19,7 @@ class TopView(TemplateView):
 
         context['owner'] = owner
         context['news'] = news
+        context['page_title'] = 'トップページ'
         context['current_menu_item'] = 'top'
         return context
 
@@ -30,6 +31,7 @@ class GreetingView(TemplateView):
         context = super().get_context_data(**kwargs)
         owner = SalonStaff.objects.get(is_owner=True)
         context['owner'] = owner
+        context['page_title'] = 'ごあいさつ'
         context['current_menu_item'] = 'greeting'
         return context
 
@@ -40,6 +42,7 @@ class MenuView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = MENU_CATEGORY
+        context['page_title'] = '施術メニュー'
         context['current_menu_item'] = 'menu'
         return context
 
@@ -51,6 +54,7 @@ class NewsView(TemplateView):
         context = super().get_context_data(**kwargs)
         news = News.objects.order_by('-published')
         context['news'] = news
+        context['page_title'] = 'お知らせ'
         context['current_menu_item'] = 'news'
         return context
 
@@ -70,5 +74,6 @@ class MapView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['page_title'] = 'アクセス'
         context['current_menu_item'] = 'map'
         return context
