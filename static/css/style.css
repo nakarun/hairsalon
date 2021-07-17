@@ -298,6 +298,50 @@ td.stamp-frame {
 }
 
 /*************
+/* TOP画面のコンテンツのマージン
+*************/
+
+.toppage-items {
+    margin-bottom: 60px;
+}
+
+
+/*************
+/* サロンデータテーブル
+*************/
+
+#salondata table{
+    border-collapse:collapse;
+    margin:5px auto 15px auto;
+}
+
+#salondata table td{
+    border-collapse:collapse;
+    background-color:#F9F9F9;
+    text-align:left;
+    padding:8px;
+    border:1px solid #D6D6D6;
+    line-height:20px;
+}
+
+#salondata table th{
+    background-color:#F5F5F5;
+    text-align:right;
+    padding:8px;
+    white-space:nowrap;
+    color: #151515;
+    border-top:1px solid #D4D4D4;
+    border-right:4px solid #D4D4D4;
+    border-bottom:1px solid #D4D4D4;
+    border-left:1px solid #D4D4D4;
+    font-size:13px;
+    font-weight:normal;
+    letter-spacing:1px;
+    background-repeat:repeat-x;
+    background-position:top;
+}
+
+/*************
 /* 並んだボタン
 *************/
 
