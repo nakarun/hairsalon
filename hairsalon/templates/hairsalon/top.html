@@ -6,6 +6,8 @@
     <div id="mainBanner">
         <img src="{% static 'media/home.png' %}"/>
     </div>
-    {% include 'hairsalon/components/news.html' %}
+    {% if news %}
+        {% include 'hairsalon/components/news.html' %}
+    {% endif %}
 </div>
 {% endblock %}
