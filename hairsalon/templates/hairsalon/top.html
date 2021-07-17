@@ -6,6 +6,9 @@
     <div id="mainBanner">
         <img src="{% static 'media/home.png' %}"/>
     </div>
+    <div class="toppage-items">
+        {% include 'hairsalon/components/greeting.html' %}
+    </div>
     {% if news %}
     <div class="toppage-items">
         {% include 'hairsalon/components/news.html' %}

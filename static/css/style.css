@@ -261,6 +261,11 @@ ul.footnav li{
     border-right:1px solid #ebebeb;
 }
 
+
+.owner-message {
+    font-size: 18px;
+}
+
 /*************
 /* お知らせ一覧
 *************/
@@ -313,6 +318,7 @@ td.stamp-frame {
 #salondata table{
     border-collapse:collapse;
     margin:5px auto 15px auto;
+    width: 100%;
 }
 
 #salondata table td{

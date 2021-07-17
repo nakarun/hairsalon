@@ -1,0 +1,17 @@
+<div id="greeting">
+  <h2>ごあいさつ</h2>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-auto">
+        <img src="{{ owner.image.url }}" width="300em"/>
+      </div>
+      <div class="col">
+        <h3>代表　{{ owner.get_full_name }}（仮名）</h3>
+        <div class="owner-message">
+          {{ owner.message | linebreaksbr }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

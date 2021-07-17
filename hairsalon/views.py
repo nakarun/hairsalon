@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 
 from .models import News
+from accounts.models import SalonStaff
 
 
 # Create your views here.
@@ -11,9 +12,25 @@ class TopView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # ごあいさつ
+        owner = SalonStaff.objects.get(is_owner=True)
+        # お知らせ
         news = News.objects.order_by('-published')
+
+        context['owner'] = owner
         context['news'] = news
         context['current_menu_item'] = 'top'
+        return context
+
+
+class GreetingView(TemplateView):
+    template_name = 'hairsalon/greeting.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        owner = SalonStaff.objects.get(is_owner=True)
+        context['owner'] = owner
+        context['current_menu_item'] = 'greeting'
         return context
 
 
