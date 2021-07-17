@@ -267,6 +267,11 @@ ul.footnav li{
     line-height: 200%;
 }
 
+.menu-category {
+    font-size: 20px;
+    line-height: 200%;
+}
+
 /*************
 /* お知らせ一覧
 *************/
@@ -302,15 +307,6 @@ td.stamp-frame {
     text-align: center;
     vertical-align: middle;
 }
-
-/*************
-/* TOP画面のコンテンツのマージン
-*************/
-
-.toppage-items {
-    margin-bottom: 60px;
-}
-
 
 /*************
 /* サロンデータテーブル

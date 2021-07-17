@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Salon, News
+from .models import Salon, News, Menu, MenuSet, MenuSetRelation
 
 
 class SalonAdmin(admin.ModelAdmin):
@@ -12,3 +12,6 @@ class SalonAdmin(admin.ModelAdmin):
 
 admin.site.register(News)
 admin.site.register(Salon, SalonAdmin)
+admin.site.register(Menu)
+admin.site.register(MenuSet)
+admin.site.register(MenuSetRelation)

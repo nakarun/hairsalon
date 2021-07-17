@@ -6,18 +6,18 @@
     <div id="mainBanner">
         <img src="{% static 'media/home.png' %}"/>
     </div>
-    <div class="toppage-items">
+    <div class="mb-5">
         {% include 'hairsalon/components/greeting.html' %}
     </div>
     {% if news %}
-    <div class="toppage-items">
+    <div class="mb-5">
         {% include 'hairsalon/components/news.html' %}
     </div>
     {% endif %}
-    <div class="toppage-items">
+    <div class="mb-5">
         {% include 'hairsalon/components/map.html' %}
     </div>
-    <div class="toppage-items">
+    <div class="mb-5">
         {% include 'hairsalon/components/salon_data.html' %}
     </div>
 </div>
