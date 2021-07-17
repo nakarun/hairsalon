@@ -8,7 +8,7 @@ from accounts.models import SalonStaff
 # Create your views here.
 
 class TopView(TemplateView):
-    template_name = 'hairsalon/top.html'
+    template_name = 'hairsalon/content.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -25,7 +25,7 @@ class TopView(TemplateView):
 
 
 class GreetingView(TemplateView):
-    template_name = 'hairsalon/greeting.html'
+    template_name = 'hairsalon/content.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -37,7 +37,7 @@ class GreetingView(TemplateView):
 
 
 class MenuView(TemplateView):
-    template_name = 'hairsalon/menu.html'
+    template_name = 'hairsalon/content.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -48,7 +48,7 @@ class MenuView(TemplateView):
 
 
 class NewsView(TemplateView):
-    template_name = 'hairsalon/news.html'
+    template_name = 'hairsalon/content.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -70,7 +70,7 @@ class NewsDetailView(DetailView):
 
 
 class MapView(TemplateView):
-    template_name = 'hairsalon/map.html'
+    template_name = 'hairsalon/content.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

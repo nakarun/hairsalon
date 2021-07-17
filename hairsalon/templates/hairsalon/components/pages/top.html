@@ -1,17 +1,14 @@
-{% extends "hairsalon/base.html" %}
 {% load static %}
-{% block page_title %}{{ page_title }}{% endblock %}
-{% block content %}
-<div id="wrapper">
+<div id="top">
     <div id="mainBanner">
         <img src="{% static 'media/home.png' %}"/>
     </div>
     <div class="mb-5">
-        {% include 'hairsalon/components/greeting.html' %}
+        {% include 'hairsalon/components/pages/greeting.html' %}
     </div>
     {% if news %}
     <div class="mb-5">
-        {% include 'hairsalon/components/news.html' %}
+        {% include 'hairsalon/components/pages/news.html' %}
     </div>
     {% endif %}
     <div class="mb-5">
@@ -21,4 +18,3 @@
         {% include 'hairsalon/components/salon_data.html' %}
     </div>
 </div>
-{% endblock %}

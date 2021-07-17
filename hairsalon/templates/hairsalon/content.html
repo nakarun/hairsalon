@@ -1,0 +1,22 @@
+{% extends "hairsalon/base.html" %}
+{% block page_title %}{{ page_title }}{% endblock %}
+{% block content %}
+<div id="wrapper">
+{% if page_title == 'トップページ' %}
+    {% include 'hairsalon/components/pages/top.html' %}
+{% elif page_title == 'ごあいさつ' %}
+    {% include 'hairsalon/components/pages/greeting.html' %}
+{% elif page_title == '施術メニュー' %}
+    {% include 'hairsalon/components/pages/menu.html' %}
+{% elif page_title == 'お知らせ' %}
+  　{% include 'hairsalon/components/pages/news.html' %}
+{% elif page_title == 'アクセス' %}
+    <div class="mb-5">
+        {% include 'hairsalon/components/map.html' %}
+    </div>
+    <div class="mb-5">
+        {% include 'hairsalon/components/salon_data.html' %}
+    </div>
+{% endif %}
+</div>
+{% endblock %}
