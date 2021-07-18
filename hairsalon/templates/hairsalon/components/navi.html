@@ -1,11 +1,27 @@
-<nav id="mainNav">
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-light">
 	<div class="inner">
-		<a class="menu" id="menu"><span>MENU</span></a>
-		<div class="panel">
-			<ul>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+	  	</button>
+		<a class="menu navbar-brand pl-3" id="menu">
+			<span>MENU</span>
+		</a>
+		<div class="panel collapse navbar-collapse"
+			 id="navbarSupportedContent"
+		>
+			<ul class="navbar-nav">
 				<li class="
+					nav-item
 					{% if current_menu_item == 'top' %}
-						current-menu-item
+					current-menu-item
 					{% endif %}
 				">
 					<a href="{% url 'top' %}">
@@ -14,8 +30,9 @@
 					</a>
 				</li>
 				<li class="
+					nav-item
 					{% if current_menu_item == 'greeting' %}
-						current-menu-item
+					current-menu-item
 					{% endif %}
 				">
 					<a href="{% url 'greeting' %}">
@@ -24,8 +41,9 @@
 					</a>
 				</li>
 				<li class="
+					nav-item
 					{% if current_menu_item == 'menu' %}
-						current-menu-item
+					current-menu-item
 					{% endif %}
 				">
 					<a href="{% url 'menu' %}">
@@ -44,8 +62,9 @@
 				</li>
 
 				<li class="
+					nav-item
 					{% if current_menu_item == 'stylist' %}
-						current-menu-item
+					current-menu-item
 					{% endif %}
 				">
 					<a href="{% url 'stylist' %}">
@@ -54,8 +73,9 @@
 					</a>
 				</li>
 				<li class="
+					nav-item
 					{% if current_menu_item == 'news' %}
-						current-menu-item
+					current-menu-item
 					{% endif %}
 				">
 					<a href="{% url 'news' %}">
@@ -64,8 +84,9 @@
 					</a>
 				</li>
 				<li class="
+					nav-item
 					{% if current_menu_item == 'map' %}
-						current-menu-item
+					current-menu-item
 					{% endif %}
 				">
 					<a href="{% url 'map' %}">

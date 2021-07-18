@@ -1,19 +1,57 @@
-<div class="account-menu-navi">
-    {% if user.is_authenticated %}
-    <span class="welcome-message">ようこそ、{{ user }}様！</span>
-    <a href="{% url 'pointcard' %}">
-        <button type="button" class="btn btn-success btn-sm">マイページ</button>
-    </a>
-    <a href="{% url 'account_logout' %}">
-        <button type="button" class="btn btn-warning btn-sm">ログアウト</button>
-    </a>
-    {% else %}
-    <span class="welcome-message">ようこそ、ゲスト様！</span>
-    <a href="{% url 'account_login' %}">
-        <button type="button" class="btn btn-success btn-sm">ログイン</button>
-    </a>
-    <a href="{% url 'account_signup' %}">
-        <button type="button" class="btn btn-info btn-sm">新規アカウント作成</button>
-    </a>
-    {% endif %}
+<div class="container pt-3">
+    <div class="row justify-content-end">
+        {% if user.is_authenticated %}
+        <div class="col-sm-auto">
+            <span classs="welcome-message">
+                ようこそ、{{ user }}様！
+            </span>
+        </div>
+        <div class="col-sm-auto">
+            <span>
+                <a href="{% url 'pointcard' %}">
+                    <button
+                            type="button"
+                            class="btn btn-success btn-sm"
+                    >
+                        マイページ
+                    </button>
+                </a>
+                <a href="{% url 'account_logout' %}">
+                    <button
+                            type="button"
+                            class="btn btn-warning btn-sm"
+                    >
+                        ログアウト
+                    </button>
+                </a>
+            </span>
+        </div>
+        {% else %}
+        <div class="col-sm-auto">
+            <span class="welcome-message">
+                ようこそ、ゲスト様！
+            </span>
+        </div>
+        <div class="col-sm-auto">
+            <span>
+                <a href="{% url 'account_login' %}">
+                    <button
+                            type="button"
+                            class="btn btn-success btn-sm"
+                    >
+                        ログイン
+                    </button>
+                </a>
+                <a href="{% url 'account_signup' %}">
+                    <button
+                            type="button"
+                            class="btn btn-info btn-sm"
+                    >
+                        新規アカウント作成
+                    </button>
+                </a>
+            </span>
+        </div>
+        {% endif %}
+    </div>
 </div>
