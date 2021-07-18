@@ -78,7 +78,7 @@ a:active, a:focus {outline:0;}
     **************/
 
     a#menu{
-        display:none;
+        display: none;
     }
 
     #mainNav li{
@@ -163,6 +163,10 @@ a:active, a:focus {outline:0;}
         width:250px;
         padding:15px 0;
         overflow:hidden;
+    }
+
+    nav#accountNav.navbar ,nav#accountNav ul.navbar-nav {
+        display: block;
     }
 }
 
