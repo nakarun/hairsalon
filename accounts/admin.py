@@ -38,7 +38,7 @@ class SalonStaffAdmin(UserAdmin):
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('Salon data'), {'fields': ('salon', )}),
+        (_('Salon data'), {'fields': ('salon', 'is_owner', 'image', 'message', )}),
     )
     add_fieldsets = (
         (None, {

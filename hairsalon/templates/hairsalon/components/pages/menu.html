@@ -1,0 +1,14 @@
+{% load hairsalontags %}
+<div id="menu">
+  <div id="set-menu" class="mb-5">
+    <h2>お得なセットメニュー</h2>
+    <hr>
+    {% get_set_menus %}
+  </div>
+  <h4>単品メニュー</h4>
+  <hr>
+  {% for category in categories %}
+    <div class="card bg-info text-white menu-category px-3 mb-3">{{ category.1 }}</div>
+    {% get_menus_filtered_by_category category.0 %}
+  {% endfor %}
+</div>

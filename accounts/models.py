@@ -20,6 +20,8 @@ class BaseUser(AbstractUser):
 class SalonStaff(BaseUser):
     salon = models.ForeignKey(Salon, related_name='staffs', on_delete=models.CASCADE)
     is_owner = models.BooleanField(default=False)
+    image = models.ImageField(null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = "サロンスタッフ"
