@@ -171,6 +171,10 @@ a:active, a:focus {outline:0;}
         text-align: center;
     }
 
+    h1.responsive-font-size-for-h1 {
+        font-size:8vw;
+    }
+
     /*************
     /* メインナビメニュー
     *************/
