@@ -232,6 +232,7 @@ a:active, a:focus {outline:0;}
 /**************************
 /* メイン画像（トップページ+サブページ）
 **************************/
+
 #mainBanner{
     clear:both;
     margin:25px auto 40px;
@@ -333,6 +334,10 @@ a:active, a:focus {outline:0;}
   display: inline-block;
 }
 
+/*************
+/* ポイントカード
+*************/
+
 table.stamp-table {
     table-layout: fixed;
 }
@@ -380,15 +385,6 @@ td.stamp-frame {
     letter-spacing:1px;
     background-repeat:repeat-x;
     background-position:top;
-}
-
-/*************
-/* 並んだボタン
-*************/
-
-.button-lined {
-    display: block;
-    float: right;
 }
 
 /*************
