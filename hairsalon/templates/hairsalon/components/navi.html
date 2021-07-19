@@ -1,97 +1,95 @@
 <nav id="mainNav" class="navbar navbar-expand-lg navbar-light">
-	<div class="inner">
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-toggle="collapse"
-			data-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
-			<span class="navbar-toggler-icon"></span>
-	  	</button>
-		<div class="panel collapse navbar-collapse"
-			 id="navbarSupportedContent"
-		>
-			<ul class="navbar-nav">
-				<li class="
-					nav-item
-					{% if current_menu_item == 'top' %}
-					current-menu-item
-					{% endif %}
-				">
-					<a href="{% url 'top' %}">
-						<strong>トップページ</strong>
-						<span>Top</span>
-					</a>
-				</li>
-				<li class="
-					nav-item
-					{% if current_menu_item == 'greeting' %}
-					current-menu-item
-					{% endif %}
-				">
-					<a href="{% url 'greeting' %}">
-						<strong>ごあいさつ</strong>
-						<span>Greeting</span>
-					</a>
-				</li>
-				<li class="
-					nav-item
-					{% if current_menu_item == 'menu' %}
-					current-menu-item
-					{% endif %}
-				">
-					<a href="{% url 'menu' %}">
-						<strong>メニュー</strong>
-						<span>Menu</span>
-					</a>
-					<ul class="sub-menu">
-						<li><a href="">セットメニュー</a></li>
-						<li><a href="">カット</a></li>
-						<li><a href="">パーマ</a></li>
-						<li><a href="">カラー</a></li>
-						<li><a href="">縮毛矯正</a></li>
-						<li><a href="">トリートメント</a></li>
-						<li><a href="">その他</a></li>
-					</ul>
-				</li>
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="panel collapse navbar-collapse"
+		 id="navbarSupportedContent"
+	>
+		<ul class="navbar-nav">
+			<li class="
+				nav-item
+				{% if current_menu_item == 'top' %}
+				current-menu-item
+				{% endif %}
+			">
+				<a href="{% url 'top' %}">
+					<strong>トップページ</strong>
+					<span>Top</span>
+				</a>
+			</li>
+			<li class="
+				nav-item
+				{% if current_menu_item == 'greeting' %}
+				current-menu-item
+				{% endif %}
+			">
+				<a href="{% url 'greeting' %}">
+					<strong>ごあいさつ</strong>
+					<span>Greeting</span>
+				</a>
+			</li>
+			<li class="
+				nav-item
+				{% if current_menu_item == 'menu' %}
+				current-menu-item
+				{% endif %}
+			">
+				<a href="{% url 'menu' %}">
+					<strong>メニュー</strong>
+					<span>Menu</span>
+				</a>
+<!--					<ul class="sub-menu">-->
+<!--						<li><a href="">セットメニュー</a></li>-->
+<!--						<li><a href="">カット</a></li>-->
+<!--&lt;!&ndash;						<li><a href="">パーマ</a></li>&ndash;&gt;-->
+<!--						<li><a href="">カラー</a></li>-->
+<!--&lt;!&ndash;						<li><a href="">縮毛矯正</a></li>&ndash;&gt;-->
+<!--						<li><a href="">トリートメント</a></li>-->
+<!--&lt;!&ndash;						<li><a href="">その他</a></li>&ndash;&gt;-->
+<!--					</ul>-->
+			</li>
 
-				<li class="
-					nav-item
-					{% if current_menu_item == 'stylist' %}
-					current-menu-item
-					{% endif %}
-				">
-					<a href="{% url 'stylist' %}">
-						<strong>スタイリスト</strong>
-						<span>Stylist</span>
-					</a>
-				</li>
-				<li class="
-					nav-item
-					{% if current_menu_item == 'news' %}
-					current-menu-item
-					{% endif %}
-				">
-					<a href="{% url 'news' %}">
-						<strong>お知らせ</strong>
-						<span>News</span>
-					</a>
-				</li>
-				<li class="
-					nav-item
-					{% if current_menu_item == 'map' %}
-					current-menu-item
-					{% endif %}
-				">
-					<a href="{% url 'map' %}">
-						<strong>地図</strong>
-						<span>Map</span>
-					</a>
-				</li>
-			</ul>
-		</div>
+			<li class="
+				nav-item
+				{% if current_menu_item == 'stylist' %}
+				current-menu-item
+				{% endif %}
+			">
+				<a href="{% url 'stylist' %}">
+					<strong>スタイリスト</strong>
+					<span>Stylist</span>
+				</a>
+			</li>
+			<li class="
+				nav-item
+				{% if current_menu_item == 'news' %}
+				current-menu-item
+				{% endif %}
+			">
+				<a href="{% url 'news' %}">
+					<strong>お知らせ</strong>
+					<span>News</span>
+				</a>
+			</li>
+			<li class="
+				nav-item
+				{% if current_menu_item == 'map' %}
+				current-menu-item
+				{% endif %}
+			">
+				<a href="{% url 'map' %}">
+					<strong>地図</strong>
+					<span>Map</span>
+				</a>
+			</li>
+		</ul>
 	</div>
 </nav>

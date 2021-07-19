@@ -74,7 +74,7 @@ a:active, a:focus {outline:0;}
     }
 
     /*************
-    /* ナビメニュー
+    /* メインナビメニュー
     **************/
 
     header#header #mainNav {
@@ -171,8 +171,34 @@ a:active, a:focus {outline:0;}
         text-align: center;
     }
 
-    #mainNav .inner {
-        text-align: left;
+    /*************
+    /* メインナビメニュー
+    *************/
+
+    #mainNav ul{padding:15px 0;}
+
+    #mainNav li{
+        margin-bottom:10px;
+        padding-bottom:10px;
+        list-style:none;
+        border-bottom:1px dashed #ebebeb;
+    }
+
+    #mainNav li:last-child{
+        border:0;
+        margin-bottom:0px;
+    }
+
+    #mainNav li a{
+        color:#555;
+        font-size:12px;
+        display:block;
+    }
+
+    #mainNav li a:hover{
+        color:#999;
+        font-size:12px;
+        display:block;
     }
 
     #accountNav.navbar {
@@ -216,7 +242,7 @@ a:active, a:focus {outline:0;}
 }
 
 /*************
-/* サイドバー
+/* 会員画面　サイドバー
 *************/
 
 #sidebar ul{padding:15px 0;}
