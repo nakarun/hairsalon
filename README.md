@@ -1,5 +1,5 @@
 # 概要
-- ポイントカード機能がついた美容室用のHPをDjangoで作成してみました。
+- ポイントカード機能がついた美容室用のHPをDjangoで作成しました。
 - 利用者側画面
   - https://sample-hair-salon.com/
   - testuser: 利用者太郎
@@ -9,8 +9,8 @@
   - teststaff: サロンスタッフ
   - password: 9ijn8uhb
 
-# Features
-- スマホ画面に対応します。
+# 機能追加予定
+- 
 
 # カバレッジ率
 ```
@@ -75,6 +75,7 @@ TOTAL                              320    125     20     12    60%
   - X-SES-CONFIGURATION-SET : これを設定しないとfirehoseにデータ送信されない
     - https://github.com/django-ses/django-ses#ses-event-monitoring-with-configuration-sets
     - https://docs.aws.amazon.com/ja_jp/ses/latest/DeveloperGuide/using-configuration-sets-in-email.html
+  - サンドボックス解除は未対応
 
 # 参考一覧
 - Top画像 : https://pixabay.com/ja/vectors/%e7%90%86%e5%ae%b9-haircutting-%e9%a0%ad-33118/
